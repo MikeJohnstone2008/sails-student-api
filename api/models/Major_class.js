@@ -1,5 +1,5 @@
 /**
- * Assignment.js
+ * Major_class.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
@@ -8,36 +8,26 @@
 module.exports = {
 
   attributes: {
-    assignment_id: {
+    major_class_id: {
       type: 'integer',
+      maxLength: 11,
       primaryKey: true,
       autoIncrement: true
     },
-    student_id: {
-      type: 'integer'
+    major: {
+      model: 'major',
+      columnName: 'major_id'
     },
-
-    student:  {
-      model: 'student',
-      columnName: 'student_id'
-    },
-
-    assignment_nbr: {
-      type: 'integer'
-    },
-    // grade_id: {
-    //   type: 'integer'
+    // class_id: {
+    //   type: 'integer',
+    //   maxLength: 11
     // },
-
-    grade:  {
-      model: 'grade',
-      columnName: 'grade_id'
-    },
-    class:  {
+    class: {
       model: 'class',
       columnName: 'class_id'
     },
 
   },
-  autoPK: false
+  tableName: "major_class"
 };
+
